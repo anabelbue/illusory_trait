@@ -1,0 +1,30 @@
+=== MICE DIAGNOSTICS REPORT ===
+
+Datasets (m): 20 
+Iterations (maxit): 60 
+
+--- STATE_E ---
+Positive Definite: 20 / 20 
+Condition Number (Min/Max): 3.48e+04 / 8.10e+04 
+Min Eigenvalue (Min/Max): 9.97e-04 / 2.27e-03 
+
+--- STATE_N ---
+Positive Definite: 20 / 20 
+Condition Number (Min/Max): 2.77e+04 / 1.25e+05 
+Min Eigenvalue (Min/Max): 6.65e-04 / 3.02e-03 
+
+--- STATE_O ---
+Positive Definite: 20 / 20 
+Condition Number (Min/Max): 3.02e+04 / 1.17e+05 
+Min Eigenvalue (Min/Max): 7.43e-04 / 2.94e-03 
+Å
+--- STATE_A ---
+Positive Definite: 20 / 20 
+Condition Number (Min/Max): 4.58e+04 / 1.53e+05 
+Min Eigenvalue (Min/Max): 6.34e-04 / 2.12e-03 
+
+--- STATE_C ---
+Positive Definite: 20 / 20 
+Condition Number (Min/Max): 3.55e+04 / 8.27e+04 
+Min Eigenvalue (Min/Max): 9.98e-04 / 2.38e-03 
+

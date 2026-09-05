@@ -1,0 +1,46 @@
+=== DETRENDING REPORT ===
+
+Method: loess 
+LOESS span: 3 
+Datasets (m): 20 
+
+--- STATE_E ---
+Positive Definite (after nearPD): 20 / 20 
+nearPD applied: 20 / 20 
+Max. change from nearPD: 8.68e-08 
+Condition Number (Min/Max): 1.00e+08 / 1.00e+08 
+Min Eigenvalue (Min/Max): 7.58e-07 / 8.13e-07 
+Variance reduction: Median 6.8% , Range 0.0% - 22.6% 
+
+--- STATE_N ---
+Positive Definite (after nearPD): 20 / 20 
+nearPD applied: 20 / 20 
+Max. change from nearPD: 1.35e-07 
+Condition Number (Min/Max): 1.00e+08 / 1.00e+08 
+Min Eigenvalue (Min/Max): 1.13e-06 / 1.19e-06 
+Variance reduction: Median 6.7% , Range 0.0% - 26.6% 
+
+--- STATE_O ---
+Positive Definite (after nearPD): 20 / 20 
+nearPD applied: 20 / 20 
+Max. change from nearPD: 1.44e-07 
+Condition Number (Min/Max): 1.00e+08 / 1.00e+08 
+Min Eigenvalue (Min/Max): 1.20e-06 / 1.26e-06 
+Variance reduction: Median 6.4% , Range 0.0% - 22.5% 
+
+--- STATE_A ---
+Positive Definite (after nearPD): 20 / 20 
+nearPD applied: 20 / 20 
+Max. change from nearPD: 1.55e-07 
+Condition Number (Min/Max): 1.00e+08 / 1.00e+08 
+Min Eigenvalue (Min/Max): 1.30e-06 / 1.37e-06 
+Variance reduction: Median 6.4% , Range -3.4% - 22.6% 
+
+--- STATE_C ---
+Positive Definite (after nearPD): 20 / 20 
+nearPD applied: 20 / 20 
+Max. change from nearPD: 1.19e-07 
+Condition Number (Min/Max): 1.00e+08 / 1.00e+08 
+Min Eigenvalue (Min/Max): 9.86e-07 / 1.05e-06 
+Variance reduction: Median 6.2% , Range -3.5% - 29.3% 
+

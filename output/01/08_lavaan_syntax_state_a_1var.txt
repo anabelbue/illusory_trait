@@ -1,0 +1,256 @@
+# RI-CLPM Syntax for: state_a
+# State: state_a
+# Trait: trait_a
+# Number of constructs: 1
+# Generated at: 2026-05-21 22:32:39.806493
+# Constructs: state_a
+# Time points: 34
+
+# === Random Intercepts ===
+RI_c1 =~ 1*state_a_3 + 1*state_a_4 + 1*state_a_5 + 1*state_a_6 + 1*state_a_7 + 1*state_a_8 + 1*state_a_9 + 1*state_a_10 + 1*state_a_11 + 1*state_a_12 + 1*state_a_13 + 1*state_a_14 + 1*state_a_15 + 1*state_a_16 + 1*state_a_17 + 1*state_a_18 + 1*state_a_19 + 1*state_a_20 + 1*state_a_21 + 1*state_a_22 + 1*state_a_23 + 1*state_a_24 + 1*state_a_25 + 1*state_a_26 + 1*state_a_27 + 1*state_a_28 + 1*state_a_29 + 1*state_a_30 + 1*state_a_31 + 1*state_a_32 + 1*state_a_33 + 1*state_a_34
+
+# === Within-Person Variables ===
+wc1_3 =~ 1*state_a_3
+wc1_4 =~ 1*state_a_4
+wc1_5 =~ 1*state_a_5
+wc1_6 =~ 1*state_a_6
+wc1_7 =~ 1*state_a_7
+wc1_8 =~ 1*state_a_8
+wc1_9 =~ 1*state_a_9
+wc1_10 =~ 1*state_a_10
+wc1_11 =~ 1*state_a_11
+wc1_12 =~ 1*state_a_12
+wc1_13 =~ 1*state_a_13
+wc1_14 =~ 1*state_a_14
+wc1_15 =~ 1*state_a_15
+wc1_16 =~ 1*state_a_16
+wc1_17 =~ 1*state_a_17
+wc1_18 =~ 1*state_a_18
+wc1_19 =~ 1*state_a_19
+wc1_20 =~ 1*state_a_20
+wc1_21 =~ 1*state_a_21
+wc1_22 =~ 1*state_a_22
+wc1_23 =~ 1*state_a_23
+wc1_24 =~ 1*state_a_24
+wc1_25 =~ 1*state_a_25
+wc1_26 =~ 1*state_a_26
+wc1_27 =~ 1*state_a_27
+wc1_28 =~ 1*state_a_28
+wc1_29 =~ 1*state_a_29
+wc1_30 =~ 1*state_a_30
+wc1_31 =~ 1*state_a_31
+wc1_32 =~ 1*state_a_32
+wc1_33 =~ 1*state_a_33
+wc1_34 =~ 1*state_a_34
+
+# === Means ===
+RI_c1 ~ rim_c1*1
+wc1_3 ~ 0*1
+wc1_4 ~ 0*1
+wc1_5 ~ 0*1
+wc1_6 ~ 0*1
+wc1_7 ~ 0*1
+wc1_8 ~ 0*1
+wc1_9 ~ 0*1
+wc1_10 ~ 0*1
+wc1_11 ~ 0*1
+wc1_12 ~ 0*1
+wc1_13 ~ 0*1
+wc1_14 ~ 0*1
+wc1_15 ~ 0*1
+wc1_16 ~ 0*1
+wc1_17 ~ 0*1
+wc1_18 ~ 0*1
+wc1_19 ~ 0*1
+wc1_20 ~ 0*1
+wc1_21 ~ 0*1
+wc1_22 ~ 0*1
+wc1_23 ~ 0*1
+wc1_24 ~ 0*1
+wc1_25 ~ 0*1
+wc1_26 ~ 0*1
+wc1_27 ~ 0*1
+wc1_28 ~ 0*1
+wc1_29 ~ 0*1
+wc1_30 ~ 0*1
+wc1_31 ~ 0*1
+wc1_32 ~ 0*1
+wc1_33 ~ 0*1
+wc1_34 ~ 0*1
+state_a_3 ~ 0*1
+state_a_4 ~ 0*1
+state_a_5 ~ 0*1
+state_a_6 ~ 0*1
+state_a_7 ~ 0*1
+state_a_8 ~ 0*1
+state_a_9 ~ 0*1
+state_a_10 ~ 0*1
+state_a_11 ~ 0*1
+state_a_12 ~ 0*1
+state_a_13 ~ 0*1
+state_a_14 ~ 0*1
+state_a_15 ~ 0*1
+state_a_16 ~ 0*1
+state_a_17 ~ 0*1
+state_a_18 ~ 0*1
+state_a_19 ~ 0*1
+state_a_20 ~ 0*1
+state_a_21 ~ 0*1
+state_a_22 ~ 0*1
+state_a_23 ~ 0*1
+state_a_24 ~ 0*1
+state_a_25 ~ 0*1
+state_a_26 ~ 0*1
+state_a_27 ~ 0*1
+state_a_28 ~ 0*1
+state_a_29 ~ 0*1
+state_a_30 ~ 0*1
+state_a_31 ~ 0*1
+state_a_32 ~ 0*1
+state_a_33 ~ 0*1
+state_a_34 ~ 0*1
+trait_a ~ mt_trait_a*1
+
+# === AR Effects (equality constraints, night lag = 0) ===
+wc1_4 ~ ar_c1*wc1_3
+wc1_5 ~ ar_c1*wc1_4
+wc1_6 ~ ar_c1*wc1_5
+wc1_7 ~ ar_c1*wc1_6
+wc1_8 ~ ar_c1*wc1_7
+wc1_9 ~ 0*wc1_8
+wc1_10 ~ ar_c1*wc1_9
+wc1_11 ~ ar_c1*wc1_10
+wc1_12 ~ ar_c1*wc1_11
+wc1_13 ~ ar_c1*wc1_12
+wc1_14 ~ ar_c1*wc1_13
+wc1_15 ~ ar_c1*wc1_14
+wc1_16 ~ ar_c1*wc1_15
+wc1_17 ~ 0*wc1_16
+wc1_18 ~ ar_c1*wc1_17
+wc1_19 ~ ar_c1*wc1_18
+wc1_20 ~ ar_c1*wc1_19
+wc1_21 ~ ar_c1*wc1_20
+wc1_22 ~ ar_c1*wc1_21
+wc1_23 ~ ar_c1*wc1_22
+wc1_24 ~ ar_c1*wc1_23
+wc1_25 ~ 0*wc1_24
+wc1_26 ~ ar_c1*wc1_25
+wc1_27 ~ ar_c1*wc1_26
+wc1_28 ~ ar_c1*wc1_27
+wc1_29 ~ ar_c1*wc1_28
+wc1_30 ~ ar_c1*wc1_29
+wc1_31 ~ ar_c1*wc1_30
+wc1_32 ~ ar_c1*wc1_31
+wc1_33 ~ 0*wc1_32
+wc1_34 ~ ar_c1*wc1_33
+
+# === Variance Wave 3 (free) ===
+wc1_3 ~~ v1_c1*wc1_3
+
+# === Innovation Variances (equality constraints) ===
+wc1_4 ~~ innov_c1*wc1_4
+wc1_5 ~~ innov_c1*wc1_5
+wc1_6 ~~ innov_c1*wc1_6
+wc1_7 ~~ innov_c1*wc1_7
+wc1_8 ~~ innov_c1*wc1_8
+wc1_9 ~~ innov_c1*wc1_9
+wc1_10 ~~ innov_c1*wc1_10
+wc1_11 ~~ innov_c1*wc1_11
+wc1_12 ~~ innov_c1*wc1_12
+wc1_13 ~~ innov_c1*wc1_13
+wc1_14 ~~ innov_c1*wc1_14
+wc1_15 ~~ innov_c1*wc1_15
+wc1_16 ~~ innov_c1*wc1_16
+wc1_17 ~~ innov_c1*wc1_17
+wc1_18 ~~ innov_c1*wc1_18
+wc1_19 ~~ innov_c1*wc1_19
+wc1_20 ~~ innov_c1*wc1_20
+wc1_21 ~~ innov_c1*wc1_21
+wc1_22 ~~ innov_c1*wc1_22
+wc1_23 ~~ innov_c1*wc1_23
+wc1_24 ~~ innov_c1*wc1_24
+wc1_25 ~~ innov_c1*wc1_25
+wc1_26 ~~ innov_c1*wc1_26
+wc1_27 ~~ innov_c1*wc1_27
+wc1_28 ~~ innov_c1*wc1_28
+wc1_29 ~~ innov_c1*wc1_29
+wc1_30 ~~ innov_c1*wc1_30
+wc1_31 ~~ innov_c1*wc1_31
+wc1_32 ~~ innov_c1*wc1_32
+wc1_33 ~~ innov_c1*wc1_33
+wc1_34 ~~ innov_c1*wc1_34
+
+# === RI Variances and Covariances ===
+RI_c1 ~~ RIvar_c1*RI_c1
+
+# === Trait Variances and Covariances with RIs ===
+trait_a ~~ v_trait_a*trait_a
+RI_c1 ~~ c_c1_trait_a*trait_a
+
+# === Observed Residual Variances = 0 ===
+state_a_3 ~~ 0*state_a_3
+state_a_4 ~~ 0*state_a_4
+state_a_5 ~~ 0*state_a_5
+state_a_6 ~~ 0*state_a_6
+state_a_7 ~~ 0*state_a_7
+state_a_8 ~~ 0*state_a_8
+state_a_9 ~~ 0*state_a_9
+state_a_10 ~~ 0*state_a_10
+state_a_11 ~~ 0*state_a_11
+state_a_12 ~~ 0*state_a_12
+state_a_13 ~~ 0*state_a_13
+state_a_14 ~~ 0*state_a_14
+state_a_15 ~~ 0*state_a_15
+state_a_16 ~~ 0*state_a_16
+state_a_17 ~~ 0*state_a_17
+state_a_18 ~~ 0*state_a_18
+state_a_19 ~~ 0*state_a_19
+state_a_20 ~~ 0*state_a_20
+state_a_21 ~~ 0*state_a_21
+state_a_22 ~~ 0*state_a_22
+state_a_23 ~~ 0*state_a_23
+state_a_24 ~~ 0*state_a_24
+state_a_25 ~~ 0*state_a_25
+state_a_26 ~~ 0*state_a_26
+state_a_27 ~~ 0*state_a_27
+state_a_28 ~~ 0*state_a_28
+state_a_29 ~~ 0*state_a_29
+state_a_30 ~~ 0*state_a_30
+state_a_31 ~~ 0*state_a_31
+state_a_32 ~~ 0*state_a_32
+state_a_33 ~~ 0*state_a_33
+state_a_34 ~~ 0*state_a_34
+
+# === RI Orthogonal to Within ===
+RI_c1 ~~ 0*wc1_3
+RI_c1 ~~ 0*wc1_4
+RI_c1 ~~ 0*wc1_5
+RI_c1 ~~ 0*wc1_6
+RI_c1 ~~ 0*wc1_7
+RI_c1 ~~ 0*wc1_8
+RI_c1 ~~ 0*wc1_9
+RI_c1 ~~ 0*wc1_10
+RI_c1 ~~ 0*wc1_11
+RI_c1 ~~ 0*wc1_12
+RI_c1 ~~ 0*wc1_13
+RI_c1 ~~ 0*wc1_14
+RI_c1 ~~ 0*wc1_15
+RI_c1 ~~ 0*wc1_16
+RI_c1 ~~ 0*wc1_17
+RI_c1 ~~ 0*wc1_18
+RI_c1 ~~ 0*wc1_19
+RI_c1 ~~ 0*wc1_20
+RI_c1 ~~ 0*wc1_21
+RI_c1 ~~ 0*wc1_22
+RI_c1 ~~ 0*wc1_23
+RI_c1 ~~ 0*wc1_24
+RI_c1 ~~ 0*wc1_25
+RI_c1 ~~ 0*wc1_26
+RI_c1 ~~ 0*wc1_27
+RI_c1 ~~ 0*wc1_28
+RI_c1 ~~ 0*wc1_29
+RI_c1 ~~ 0*wc1_30
+RI_c1 ~~ 0*wc1_31
+RI_c1 ~~ 0*wc1_32
+RI_c1 ~~ 0*wc1_33
+RI_c1 ~~ 0*wc1_34
