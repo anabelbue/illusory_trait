@@ -4,7 +4,7 @@
 # Number of constructs: 5
 # Generated at: 2026-05-21 22:57:47.176914
 # Constructs: state_a, happiness, selfesteem, negativity, positivity
-# Time points: 34
+# Time points: 32
 
 # === Random Intercepts ===
 RI_c1 =~ 1*state_a_3 + 1*state_a_4 + 1*state_a_5 + 1*state_a_6 + 1*state_a_7 + 1*state_a_8 + 1*state_a_9 + 1*state_a_10 + 1*state_a_11 + 1*state_a_12 + 1*state_a_13 + 1*state_a_14 + 1*state_a_15 + 1*state_a_16 + 1*state_a_17 + 1*state_a_18 + 1*state_a_19 + 1*state_a_20 + 1*state_a_21 + 1*state_a_22 + 1*state_a_23 + 1*state_a_24 + 1*state_a_25 + 1*state_a_26 + 1*state_a_27 + 1*state_a_28 + 1*state_a_29 + 1*state_a_30 + 1*state_a_31 + 1*state_a_32 + 1*state_a_33 + 1*state_a_34

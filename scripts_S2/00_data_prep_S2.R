@@ -6,7 +6,7 @@ library(psych)
 
 
 #### load data, select variables, recode variables ####
-pace_data = readRDS("/Users/anabelbue/Documents/01_Phd/05_PACE study/pace_analysis/data/pace_esm_data_s1.rds") %>% 
+pace_data = readRDS(here("data", "pace_esm_data_s1.rds")) %>% 
 # rename variables
   dplyr::rename(
     "E1" = "soci",

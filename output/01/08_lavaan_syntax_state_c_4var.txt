@@ -4,7 +4,7 @@
 # Number of constructs: 4
 # Generated at: 2026-05-22 02:08:57.770638
 # Constructs: state_c, selfesteem, happiness, duty
-# Time points: 34
+# Time points: 32
 
 # === Random Intercepts ===
 RI_c1 =~ 1*state_c_3 + 1*state_c_4 + 1*state_c_5 + 1*state_c_6 + 1*state_c_7 + 1*state_c_8 + 1*state_c_9 + 1*state_c_10 + 1*state_c_11 + 1*state_c_12 + 1*state_c_13 + 1*state_c_14 + 1*state_c_15 + 1*state_c_16 + 1*state_c_17 + 1*state_c_18 + 1*state_c_19 + 1*state_c_20 + 1*state_c_21 + 1*state_c_22 + 1*state_c_23 + 1*state_c_24 + 1*state_c_25 + 1*state_c_26 + 1*state_c_27 + 1*state_c_28 + 1*state_c_29 + 1*state_c_30 + 1*state_c_31 + 1*state_c_32 + 1*state_c_33 + 1*state_c_34

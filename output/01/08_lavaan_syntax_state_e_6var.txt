@@ -4,7 +4,7 @@
 # Number of constructs: 6
 # Generated at: 2026-05-21 12:34:11.88259
 # Constructs: state_e, happiness, sociability, positivity, negativity, mating
-# Time points: 34
+# Time points: 32
 
 # === Random Intercepts ===
 RI_c1 =~ 1*state_e_3 + 1*state_e_4 + 1*state_e_5 + 1*state_e_6 + 1*state_e_7 + 1*state_e_8 + 1*state_e_9 + 1*state_e_10 + 1*state_e_11 + 1*state_e_12 + 1*state_e_13 + 1*state_e_14 + 1*state_e_15 + 1*state_e_16 + 1*state_e_17 + 1*state_e_18 + 1*state_e_19 + 1*state_e_20 + 1*state_e_21 + 1*state_e_22 + 1*state_e_23 + 1*state_e_24 + 1*state_e_25 + 1*state_e_26 + 1*state_e_27 + 1*state_e_28 + 1*state_e_29 + 1*state_e_30 + 1*state_e_31 + 1*state_e_32 + 1*state_e_33 + 1*state_e_34

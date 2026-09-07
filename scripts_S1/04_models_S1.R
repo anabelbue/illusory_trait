@@ -272,6 +272,7 @@ t_global_start <- Sys.time()
 
 results_all <- list()
 fit_measures_all <- list()
+neg_var_list <- list()
 
 for (state_comp in state_components) {
   
@@ -380,7 +381,28 @@ for (state_comp in state_components) {
       
       n_converged <- n_converged + 1
       
+      # Save fit object for first imputed dataset only
+      if (m_idx == 1) {
+        fit_file <- file.path(folder.main,
+                              paste0("fit_", state_comp, "_",
+                                     length(current_constructs), "var.Rdata"))
+        save(fit, file = fit_file)
+        cat("  -> Fit object saved:", fit_file, "\n")
+      }
+      
+    
+      
       pe <- parameterEstimates(fit)
+      var_params <- pe[pe$op == "~~" & pe$lhs == pe$rhs, ]
+      neg_vars <- var_params[var_params$est < 0, ]
+      if (nrow(neg_vars) > 0) {
+        neg_vars$state_comp <- state_comp
+        neg_vars$model_label <- model_label
+        neg_vars$n_constructs <- length(current_constructs)
+        neg_vars$m_idx <- m_idx
+        neg_var_list[[length(neg_var_list) + 1]] <- neg_vars
+      }
+      
       labeled <- pe[pe$label != "", ]
       labeled <- labeled[!duplicated(labeled$label), ]
       
@@ -490,6 +512,17 @@ for (state_comp in state_components) {
     
     cat("\n")
   }
+}
+
+if (length(neg_var_list) > 0) {
+  neg_var_df <- do.call(rbind, neg_var_list)
+  write.csv(neg_var_df,
+            file.path(folder.main, "negative_variances.csv"),
+            row.names = FALSE)
+} else {
+  write.csv(data.frame(message = "No negative variances found"),
+            file.path(folder.main, "negative_variances.csv"),
+            row.names = FALSE)
 }
 
 t_global_end <- Sys.time()
