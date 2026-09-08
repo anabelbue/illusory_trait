@@ -1,5 +1,6 @@
 library(tidyverse)
 library(writexl)
+library(here)
 
 
 # Full model output table -------------------------------------------------
@@ -283,4 +284,7 @@ write_xlsx(
 )
 
 
+load(here("output", "02", "modification_indices_S2.Rdata"))
+
+writexl::write_xlsx(mi_all, here("tables_figures", "modification_indices_S2.xlsx"))
 
