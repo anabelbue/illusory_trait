@@ -1,5 +1,7 @@
 .Rhistory
 .RData
+.RDataTmp
+*.RData
 .Rproj.user/
 *.Rproj
 *.log
