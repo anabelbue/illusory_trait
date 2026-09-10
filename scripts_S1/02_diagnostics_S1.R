@@ -1,28 +1,32 @@
-sim <- "01"
-
-lib <- "/work/ws-tmp/e329964-trait_project/conda_env/lib/R/library"
-folder.main.pre <- file.path( "/work/ws-tmp/e329964-trait_project/02_imp", sim )
-
-
-.libPaths(lib)
-print( lib )
-
-folder.main <- file.path( folder.main.pre )
-
-
-
 
 ################################################################################
 #  DIAGNOSTICS: Convergence + Covariance Matrix Checks
 #  Input: imp.Rdata (from 01_imputation.R)
 ################################################################################
 
+
 library(mice)
 
+# ============================================================
+# USER CONFIGURATION - adjust this path to your setup
+# ============================================================
+base_path <- ""  # your workspace/repository path
+# ============================================================
+
 # ---- 1. Load -----------------------------------------------------------------
+
+sim <- "01"
+
+folder.main.pre <- file.path(base_path, "output", sim)
+folder.main     <- file.path(folder.main.pre)
+if (!dir.exists(folder.main)) dir.create(folder.main, recursive = TRUE)
+
+d1 <- read.csv(file.path(base_path, "data", "wide_dat_S1.csv"))
+
 load( file.path( folder.main, "imp.Rdata" ) )
-d1 <- read.csv( file.path( folder.main, "../../01_daten/01/wide_dat_S1.csv" ) )
+
 cat("MICE object loaded: m =", imp$m, " datasets\n\n")
+
 
 # ---- 2. Trace Plots (ALL variables) -----------------------------------------
 cat("Generating trace plots for ALL variables...\n")

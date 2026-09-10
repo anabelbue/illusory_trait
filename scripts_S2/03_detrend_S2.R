@@ -1,14 +1,3 @@
-sim <- "02"
-
-lib <- "/work/ws-tmp/e329964-trait_project/conda_env/lib/R/library"
-folder.main.pre <- file.path( "/work/ws-tmp/e329964-trait_project/02_imp", sim )
-
-
-
-.libPaths(lib)
-print( lib )
-
-folder.main <- file.path( folder.main.pre )
 
 ################################################################################
 #  03_DETREND: Individual Detrending + nearPD + Covariance Matrix Checks
@@ -39,8 +28,22 @@ loess_span <- 3             # LOESS smoothing parameter
 # 0.75 = moderate, 0.5 = flexible
 
 # ---- 1. Load -----------------------------------------------------------------
+# ============================================================
+# USER CONFIGURATION - adjust this path to your setup
+# ============================================================
+base_path <- ""  # your workspace/repository path
+# ============================================================
+
+sim <- "02"
+
+folder.main.pre <- file.path(base_path, "output", sim)
+folder.main     <- file.path(folder.main.pre)
+if (!dir.exists(folder.main)) dir.create(folder.main, recursive = TRUE)
+
+d2 <- read.csv(file.path(base_path, "data", "wide_dat_S2.csv"))
+
 load( file.path( folder.main, "imp.Rdata" ) )
-d1 <- read.csv( file.path( folder.main, "../../01_daten/01/wide_dat_S2.csv" ) )
+
 cat("MICE object loaded: m =", imp$m, "\n\n")
 
 constructs <- c("state_e", "state_n", "state_o", "state_c", "state_a", 
@@ -144,7 +147,7 @@ for (comp in state_components) {
   }
   
   selected_vars <- c(state_vars, trait_var, other_vars)
-  selected_vars <- intersect(selected_vars, names(d1))
+  selected_vars <- intersect(selected_vars, names(d2))
   
   cat("  Additional constructs (", length(other_constructs), "):",
       paste(other_constructs, collapse = ", "), "\n")

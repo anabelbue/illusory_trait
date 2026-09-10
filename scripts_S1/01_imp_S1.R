@@ -1,20 +1,19 @@
-sim <- "01"
-
-
-
-lib <- "/work/ws-tmp/e329964-trait_project/conda_env/lib/R/library"
-folder.main.pre <- file.path( "/work/ws-tmp/e329964-trait_project/02_imp", sim )
-
-
-.libPaths(lib)
-print( lib )
-
-folder.main <- file.path( folder.main.pre )
-
 library(mice)
 library(dplyr)
 
-d1 <- read.csv( file.path( folder.main, "../../01_daten/01/wide_dat_S1.csv" ) )
+# ============================================================
+# USER CONFIGURATION - adjust this path to your setup
+# ============================================================
+base_path <- ""  # your workspace/repository path
+# ============================================================
+
+sim <- "01"
+
+folder.main.pre <- file.path(base_path, "output", sim)
+folder.main     <- file.path(folder.main.pre)
+if (!dir.exists(folder.main)) dir.create(folder.main, recursive = TRUE)
+
+d1 <- read.csv(file.path(base_path, "data", "wide_dat_S1.csv"))
 
 cat("Dimensions:", nrow(d1), "rows x", ncol(d1), "columns\n")
 cat("Overall proportion missing:", round(mean(is.na(d1)) * 100, 1), "%\n\n")

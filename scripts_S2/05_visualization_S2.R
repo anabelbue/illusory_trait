@@ -1,7 +1,7 @@
 library(tidyverse)
 library(here)
 
-load(here("results_cluster", "02", "riclpm_multivariate_results.Rdata"))
+load(here("output", "02", "riclpm_multivariate_results.Rdata"))
 
 # Function to extract parameters of interest across models
 extract_params <- function(results, state_comp, trait_var) {

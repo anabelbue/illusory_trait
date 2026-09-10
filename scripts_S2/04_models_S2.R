@@ -1,13 +1,3 @@
-sim <- "02"
-
-lib <- "/work/ws-tmp/e329964-trait_project/conda_env/lib/R/library"
-folder.main.pre <- file.path( "/work/ws-tmp/e329964-trait_project/02_imp", sim )
-
-
-.libPaths(lib)
-print( lib )
-
-folder.main <- file.path( folder.main.pre )
 
 ################################################################################
 #  04_RICLPM_MULTIVARIATE: RI-CLPM with cumulatively added constructs
@@ -33,11 +23,19 @@ folder.main <- file.path( folder.main.pre )
 library(lavaan)
 library(Matrix)  # for nearPD
 
-# ---- 1. Load ----------------------------------------------------------------    
+# ---- 1. Load ----------------------------------------------------------------  
+sim <- "02"
+
+folder.main.pre <- file.path(base_path, "output", sim)
+folder.main     <- file.path(folder.main.pre)
+if (!dir.exists(folder.main)) dir.create(folder.main, recursive = TRUE)
+
+d2 <- read.csv(file.path(base_path, "data", "wide_dat_S2.csv"))
+
 load( file.path( folder.main, "imp.Rdata" ) )
 load( file.path( folder.main, "imp_detrend_list.Rdata" ) )
-d1 <- read.csv( file.path( folder.main, "../../01_daten/01/wide_dat_S2.csv" ) )
-n_obs <- nrow(d1)
+
+n_obs <- nrow(d2)
 m_imp <- length(imp_detrend_list)
 n_time <- 32
 

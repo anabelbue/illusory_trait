@@ -1,8 +1,7 @@
 library(tidyverse)
 library(here)
 
-load(here("results_cluster", "01", "riclpm_multivariate_results.Rdata"))
-output <- readRDS(here("results_cluster", "01", "riclpm_multivariate_results.Rdata"))
+load(here("output", "01", "riclpm_multivariate_results.Rdata"))
 
 
 # Filter to only M1 (model 0) and M2 (model 5, the full model with all 5 covariates)

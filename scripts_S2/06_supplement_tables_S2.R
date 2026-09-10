@@ -5,7 +5,7 @@ library(here)
 
 # Full model output table -------------------------------------------------
 
-load("~/Documents/02_Nebenprojekte/03_Illusory trait/Illusory_trait_analysis/results_cluster/02/riclpm_multivariate_results.Rdata")
+load(here("output", "02", "riclpm_multivariate_results.Rdata"))
 
 # Function to create a table for one state component
 create_param_table <- function(results, state_comp, trait_map) {
@@ -209,8 +209,7 @@ write_xlsx(tables_labeled, "full_output_tables_S2.xlsx")
 
 
 # Fit indices, convergence, and nearPD tables -----------------------------
-load("~/Documents/02_Nebenprojekte/03_Illusory trait/Illusory_trait_analysis/results_cluster/02/riclpm_multivariate_results.Rdata")
-load("~/Documents/02_Nebenprojekte/03_Illusory trait/Illusory_trait_analysis/results_cluster/02/cov_checks_detrend.Rdata")
+load(here("output", "02", "cov_checks_detrend.Rdata"))
 state_components <- c("state_e", "state_n", "state_o", "state_a", "state_c")
 
 create_fit_table <- function(results_all, fit_measures_all) {

@@ -1,13 +1,4 @@
-sim <- "01"
 
-lib <- "/work/ws-tmp/e329964-trait_project/conda_env/lib/R/library"
-folder.main.pre <- file.path( "/work/ws-tmp/e329964-trait_project/02_imp", sim )
-
-
-.libPaths(lib)
-print( lib )
-
-folder.main <- file.path( folder.main.pre )
 
 ################################################################################
 #  03_DETREND: Individual Detrending + nearPD + Covariance Matrix Checks
@@ -38,15 +29,30 @@ loess_span <- 3             # LOESS smoothing parameter
 # 0.75 = moderate, 0.5 = flexible
 
 # ---- 1. Load -----------------------------------------------------------------
+# ---- 1. Load -----------------------------------------------------------------
+# ============================================================
+# USER CONFIGURATION - adjust this path to your setup
+# ============================================================
+base_path <- ""  # your workspace/repository path
+# ============================================================
+
+sim <- "01"
+
+folder.main.pre <- file.path(base_path, "output", sim)
+folder.main     <- file.path(folder.main.pre)
+if (!dir.exists(folder.main)) dir.create(folder.main, recursive = TRUE)
+
+d1 <- read.csv(file.path(base_path, "data", "wide_dat_S1.csv"))
+
 load( file.path( folder.main, "imp.Rdata" ) )
-d1 <- read.csv( file.path( folder.main, "../../01_daten/01/wide_dat_S1.csv" ) )
+
 cat("MICE object loaded: m =", imp$m, "\n\n")
 
 constructs <- c("state_e", "state_n", "state_o", "state_a", "state_c",
                 "happiness", "selfesteem", "duty", "intellect", "adversity",
                 "mating", "positivity", "negativity", "deception", "sociability")
 traits <- c("trait_e", "trait_n", "trait_o", "trait_a", "trait_c")
-n_time <- 34
+n_time <- 34 # time points 3-34 are used, so 32 in total
 
 # ---- 2. Detrending function --------------------------------------------------
 detrend_dataset <- function(d, constructs, n_time, method, span = 3) {

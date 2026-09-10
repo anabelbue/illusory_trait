@@ -1,13 +1,3 @@
-sim <- "01"
-
-lib <- "/work/ws-tmp/e329964-trait_project/conda_env/lib/R/library"
-folder.main.pre <- file.path( "/work/ws-tmp/e329964-trait_project/02_imp", sim )
-
-
-.libPaths(lib)
-print( lib )
-
-folder.main <- file.path( folder.main.pre )
 
 ################################################################################
 #  04_RICLPM_MULTIVARIATE: RI-CLPM with cumulatively added constructs
@@ -33,13 +23,27 @@ folder.main <- file.path( folder.main.pre )
 library(lavaan)
 library(Matrix)  # for nearPD
 
-# ---- 1. Load ----------------------------------------------------------------    
+# ---- 1. Load -----------------------------------------------------------------
+# ============================================================
+# USER CONFIGURATION - adjust this path to your setup
+# ============================================================
+base_path <- ""  # your workspace/repository path
+# ============================================================
+
+sim <- "01"
+
+folder.main.pre <- file.path(base_path, "output", sim)
+folder.main     <- file.path(folder.main.pre)
+if (!dir.exists(folder.main)) dir.create(folder.main, recursive = TRUE)
+
+d1 <- read.csv(file.path(base_path, "data", "wide_dat_S1.csv"))
+
 load( file.path( folder.main, "imp.Rdata" ) )
 load( file.path( folder.main, "imp_detrend_list.Rdata" ) )
 
 n_obs <- nrow(d1)
 m_imp <- length(imp_detrend_list)
-n_time <- 34
+n_time <- 34 # time points 3-34 are used, so 32 in total
 
 # ---- PARAMETER: Number of datasets to use ------------------------------------
 m_use <- 20         # How many of the m_imp datasets to use?

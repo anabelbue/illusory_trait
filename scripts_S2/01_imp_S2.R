@@ -1,23 +1,23 @@
-sim <- "02"
-
-
-
-lib <- "/work/ws-tmp/e329964-trait_project/conda_env/lib/R/library"
-folder.main.pre <- file.path( "/work/ws-tmp/e329964-trait_project/02_imp", sim )
-
-
-.libPaths(lib)
-print( lib )
-
-folder.main <- file.path( folder.main.pre )
-
 library(mice)
 library(dplyr)
 
-d1 <- read.csv( file.path( folder.main, "../../01_daten/01/wide_dat_S2.csv" ) )
+# ============================================================
+# USER CONFIGURATION - adjust this path to your setup
+# ============================================================
+base_path <- ""  # your workspace/repository path
+# ============================================================
 
-cat("Dimensions:", nrow(d1), "rows x", ncol(d1), "columns\n")
-cat("Overall proportion missing:", round(mean(is.na(d1)) * 100, 1), "%\n\n")
+sim <- "02"
+
+folder.main.pre <- file.path(base_path, "output", sim)
+folder.main     <- file.path(folder.main.pre)
+if (!dir.exists(folder.main)) dir.create(folder.main, recursive = TRUE)
+
+d2 <- read.csv(file.path(base_path, "data", "wide_dat_S2.csv"))
+
+
+cat("Dimensions:", nrow(d2), "rows x", ncol(d2), "columns\n")
+cat("Overall proportion missing:", round(mean(is.na(d2)) * 100, 1), "%\n\n")
 
 # Inspect missing pattern per construct
 constructs <- c("state_e", "state_n", "state_o", "state_c", "state_a", 
@@ -26,8 +26,8 @@ constructs <- c("state_e", "state_n", "state_o", "state_c", "state_a",
 
 cat("Proportion missing per construct:\n")
 for (cst in constructs) {
-  cols <- grep(paste0("^", cst, "_\\d+$"), names(d1), value = TRUE)
-  pct  <- round(mean(is.na(d1[, cols])) * 100, 1)
+  cols <- grep(paste0("^", cst, "_\\d+$"), names(d2), value = TRUE)
+  pct  <- round(mean(is.na(d2[, cols])) * 100, 1)
   cat(sprintf("  %-15s: %5.1f%% missing\n", cst, pct))
 }
 
@@ -35,16 +35,16 @@ for (cst in constructs) {
 cat("\nMissing in trait variables:\n")
 traits_check <- c("trait_e", "trait_n", "trait_o", "trait_a", "trait_c")
 for (tr in traits_check) {
-  n_miss <- sum(is.na(d1[[tr]]))
+  n_miss <- sum(is.na(d2[[tr]]))
   cat(sprintf("  %-10s: %d missing (%4.1f%%)\n", tr, n_miss,
-              100 * n_miss / nrow(d1)))
+              100 * n_miss / nrow(d2)))
 }
 
 # ---- 2. Strategy: Custom predictor matrix -----------------------------------
 #
 
 # Variable names
-varnames   <- names(d1)
+varnames   <- names(d2)
 n_vars     <- length(varnames)
 traits     <- c("trait_e", "trait_n", "trait_o", "trait_a", "trait_c")
 window     <- 3   # +/- 3 time points as predictors
@@ -136,7 +136,7 @@ cat("  Median:", median(pred_counts[pred_counts > 0]), "\n")
 # Recommendation: pmm with the reduced predictor matrix above
 #
 
-meth <- make.method(d1)
+meth <- make.method(d2)
 meth["id"] <- ""   # do not impute id
 
 # All set to PMM (default for numeric variables)
@@ -153,7 +153,7 @@ t_start <- Sys.time()
 set.seed(1234)
 
 imp <- mice(
-  data            = d1,
+  data            = d2,
   m               = 20,          # 20 imputed datasets (standard)
   method          = meth,
   predictorMatrix = pred,
@@ -166,4 +166,4 @@ t_end <- Sys.time()
 cat("\nRuntime:", round(difftime(t_end, t_start, units = "mins"), 1), "minutes\n")
 
 # ---- Save -------------------------------------------------------------------
-save(imp, d1, file = file.path(folder.main, paste0("imp.Rdata")) )
+save(imp, d2, file = file.path(folder.main, paste0("imp.Rdata")) )
