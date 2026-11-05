@@ -94,16 +94,6 @@ nrow(pace_data) - nrow(pace_data_r) # 32 observations excluded
 
 
 
-# after day 4 it starts with day 3 again, so we could simply add a +1 to the day where it restarts again 
-
-#id2: the not unique number 25 has the same day number as the first time (4)
-# if this happens, I could check whether there are any distinct n_days in between (which would be day 5 here)
-# and then assign the second number with the latter entry the following distinct number (6) 
-# the difference between the newly assigned number and the following numbers then need to be added to all following days 
-# if there is no day in between, then we have to create one, so simply add 1 plus one to that day and all following days
-# the corrected n_sent_invitations colum should then be the n_day*n_survey_per_day 
-
-# There may be two types: those where 
 pace_data_corrected <- pace_data_r %>%
   group_by(id) %>%
   mutate(
